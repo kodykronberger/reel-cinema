@@ -4,4 +4,25 @@ $card-movie-width: 18%;
   max-width: $card-movie-width;
   width: $card-movie-width;
   border: none;
+
+  &:hover {
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-movie-hover-body {
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+
+    .card-movie-hover-body-label {
+      color: white;
+    }
+  }
 }

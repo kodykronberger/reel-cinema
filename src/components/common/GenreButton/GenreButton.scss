@@ -1,0 +1,25 @@
+@import 'assets/scss/colors.scss';
+
+$genre-button-width: 24%;
+
+.genre-button {
+  color: white;
+  font-weight: bold;
+  max-width: $genre-button-width;
+  width: $genre-button-width;
+  height: 10rem;
+  border: none;
+  text-align: center;
+  background: $color-purple;
+  background: linear-gradient(90deg, $color-purple 0%, $color-light-blue 100%);
+  border-radius: 5px;
+
+  &:hover {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+  }
+
+  .genre-button-title {
+  }
+}
