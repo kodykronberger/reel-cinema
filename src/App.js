@@ -30,7 +30,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <div className="p-4">
+      <div className="px-5">
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/categories/:category" exact component={ByCategory} />
