@@ -33,7 +33,7 @@ const App = () => {
       <div className="px-5">
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/categories/:category" exact component={ByCategory} />
+          <Route path="/list" exact component={ByCategory} />
           <Route path="/details/:movie" exact component={Details} />
           <Route path="/test" exact component={Test} />
         </Switch>

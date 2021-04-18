@@ -8,7 +8,7 @@ const Home = () => {
   const history = useHistory();
   const { data, loading } = useFetchAllMovies();
   const onBrowseByCategory = category => {
-    history.push(`/categories/${category}`);
+    history.push(`/list?category=${escape(category)}`);
   };
   const onViewDetails = id => {
     history.push(`/details/${id}`);
@@ -40,19 +40,19 @@ const Home = () => {
         <div className="genres-container d-flex justify-content-between">
           <GenreButton
             genre="Comedy"
-            onClick={() => onBrowseByCategory('comedy')}
+            onClick={() => onBrowseByCategory('Comedy')}
           />
           <GenreButton
             genre="Action"
-            onClick={() => onBrowseByCategory('action')}
+            onClick={() => onBrowseByCategory('Action')}
           />
           <GenreButton
             genre="Drama"
-            onClick={() => onBrowseByCategory('drama')}
+            onClick={() => onBrowseByCategory('Drama')}
           />
           <GenreButton
             genre="True Crime"
-            onClick={() => onBrowseByCategory('true-crime')}
+            onClick={() => onBrowseByCategory('True Crime')}
           />
         </div>
       </div>

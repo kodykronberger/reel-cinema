@@ -35,7 +35,7 @@ const CardMovie = ({
           <CardBody>
             <CardTitle tag="h5">{originalTitle}</CardTitle>
             <CardSubtitle tag="h6" className="mb-2 text-muted">
-              {genres.join(',')}
+              {genres.join(', ')}
             </CardSubtitle>
             {isHovered && (
               <Button className="align-center" onClick={onViewDetails}>
