@@ -19,7 +19,7 @@
     "apollo-link-state": "^0.4.2",
     "bootstrap": "^4.6.0",
     "json-graphql-server": "^2.2.0",
-    "node-sass": "^5.0.0",
+    "node-sass": "4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
