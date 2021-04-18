@@ -1,6 +1,9 @@
 import Test from './components/routes/Test';
 import { Route, Switch } from 'react-router-dom';
 import Navbar from 'components/layout/Navbar';
+import Home from 'components/routes/Home';
+import ByCategory from 'components/routes/ByCategory';
+import Details from 'components/routes/Details';
 
 /**
  * This function is used to simulate performance benchmarking.
@@ -27,9 +30,14 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <Switch>
-        <Route path="/test" exact component={Test} />
-      </Switch>
+      <div className="p-4">
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/categories/:category" exact component={ByCategory} />
+          <Route path="/details/:movie" exact component={Details} />
+          <Route path="/test" exact component={Test} />
+        </Switch>
+      </div>
     </>
   );
 };
