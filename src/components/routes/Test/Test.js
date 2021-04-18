@@ -1,5 +1,5 @@
-import './Home.css';
-import { useFetchAllMovies } from './rest';
+import './Test.scss';
+import { useFetchAllMovies } from '../../../rest';
 
 /**
  * You have the option to use either REST
@@ -10,11 +10,11 @@ import { useFetchAllMovies } from './rest';
  * Use `graphql/useAllMoviesQuery` instead for
  * GraphQL.
  **/
-const Home = () => {
+const Test = () => {
   const { data, loading } = useFetchAllMovies();
 
   return (
-    <div className="home-container">
+    <div className="test-container">
       <h1>Popular Movies</h1>
 
       {loading ? (
@@ -39,4 +39,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Test;

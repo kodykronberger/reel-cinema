@@ -1,5 +1,6 @@
-import Home from './Home';
+import Test from './components/routes/Test';
 import { Route, Switch } from 'react-router-dom';
+import Navbar from 'components/layout/Navbar';
 
 /**
  * This function is used to simulate performance benchmarking.
@@ -24,9 +25,12 @@ export const trackPageCompletedLoading = () => {
 
 const App = () => {
   return (
-    <Switch>
-      <Route path="/" exact component={Home} />
-    </Switch>
+    <>
+      <Navbar />
+      <Switch>
+        <Route path="/test" exact component={Test} />
+      </Switch>
+    </>
   );
 };
 
