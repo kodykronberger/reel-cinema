@@ -14,7 +14,7 @@ import {
   NavbarText
 } from 'reactstrap';
 import './Navbar.scss';
-import Logo from 'assets/Logo.png';
+import Logo from 'assets/img/Logo.png';
 
 const Example = props => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,35 +23,11 @@ const Example = props => {
 
   return (
     <div className="reel-nav">
-      <Navbar color="light" light expand="md">
+      <Navbar color="light" light expand="md" className="p-0">
         <NavbarBrand href="/">
           <img src={Logo} />
         </NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">
-                GitHub
-              </NavLink>
-            </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Options
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>Option 1</DropdownItem>
-                <DropdownItem>Option 2</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Reset</DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-          </Nav>
-          <NavbarText>Simple Text</NavbarText>
-        </Collapse>
+        <NavbarText>Reel Cinema</NavbarText>
       </Navbar>
     </div>
   );
