@@ -9,6 +9,7 @@ import {
   CardSubtitle,
   Button
 } from 'reactstrap';
+import RatingLabel from '../RatingLabel';
 
 const CardMovie = ({
   id,
@@ -33,7 +34,10 @@ const CardMovie = ({
         <CardImg top width="100%" src={posterPath} alt={originalTitle} />
         {showCardBody && (
           <CardBody>
-            <CardTitle tag="h5">{originalTitle}</CardTitle>
+            <CardTitle>
+              {originalTitle}
+              <RatingLabel rating={voteAverage} />
+            </CardTitle>
             <CardSubtitle tag="h6" className="mb-2 text-muted">
               {genres.join(', ')}
             </CardSubtitle>
