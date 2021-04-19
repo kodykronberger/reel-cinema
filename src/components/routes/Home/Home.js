@@ -7,11 +7,13 @@ import { useHistory } from 'react-router-dom';
 import genres from 'constants/genres';
 import Breadcrumb from 'components/common/Breadcrumb';
 import movies from 'constants/movies';
+import SortDropdown from 'components/common/SortDropdown';
 
 const Home = () => {
   const history = useHistory();
   const { data, loading } = useFetchAllMovies();
   const [topMovieData, setTopMovieData] = useState([]);
+  const [currentSort, setCurrentSort] = useState(null);
 
   useEffect(() => {
     if (!loading && data && data.length) {
@@ -26,6 +28,8 @@ const Home = () => {
       );
     }
   }, [data, loading]);
+
+  let sortedData = currentSort ? data?.sort(currentSort.compareFn) : data;
 
   return (
     <div className="home-container">
@@ -60,13 +64,19 @@ const Home = () => {
         </div>
       </div>
       <div className="all-movies-container p-5">
-        <h5 className="mb-0">Movies</h5>
-        <h2 className="mb-3">Browse All</h2>
+        <div className="d-inline-block">
+          <h5 className="mb-0">Movies</h5>
+          <h2 className="mb-3">Browse All</h2>
+        </div>
+        <SortDropdown
+          label={currentSort?.name}
+          onChange={sort => setCurrentSort(sort)}
+        />
         {loading ? (
           <p>Loading...</p>
         ) : (
           <div className="d-flex justify-content-between flex-wrap">
-            {data.map((movie, idx) => (
+            {sortedData.map((movie, idx) => (
               <CardMovie
                 key={idx}
                 onViewDetails={() => history.push(`/details/${movie.id}`)}
