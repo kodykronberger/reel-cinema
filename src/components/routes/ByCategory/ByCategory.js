@@ -13,13 +13,13 @@ const ByCategory = () => {
   const query = useQuery();
   const category = query.get('category');
 
-  const onBack = () => {
-    history.push(`/`);
-  };
-
   return (
     <div className="p-5">
-      <Breadcrumb showBackButton onBack={onBack} subtitle={category} />
+      <Breadcrumb
+        showBackButton
+        onBack={() => history.push(`/`)}
+        subtitle={category}
+      />
       {loading ? (
         <p>Loading...</p>
       ) : (

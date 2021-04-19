@@ -2,4 +2,13 @@
 
 .rating-star {
   color: $color-blue;
+
+  &.rating-star-with-denominator {
+    font-size: 1.3rem;
+  }
+
+  .rating-denominator {
+    color: $color-gray;
+    font-size: 1rem;
+  }
 }

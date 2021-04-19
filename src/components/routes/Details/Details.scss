@@ -1,0 +1,67 @@
+@import 'assets/scss/colors.scss';
+
+$details-cast-member-width: 18%;
+
+.details-container {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-weight: 400;
+  }
+
+  h5 {
+    color: $color-gray-blue;
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+
+  .details-poster {
+    width: 100%;
+  }
+
+  .details-year {
+    color: $color-gray;
+  }
+
+  .details-overview {
+    color: $color-gray-blue;
+    font-weight: 400;
+    font-size: 1.1rem;
+  }
+}
+
+.details-cast-member {
+  max-width: $details-cast-member-width;
+  width: $details-cast-member-width;
+  min-width: $details-cast-member-width;
+  border: none;
+
+  //   .card-movie-title {
+  //     font-size: 1.2rem;
+  //     font-weight: bold;
+  //   }
+
+  //   &.card-movie-shadow,
+  //   .card-movie-shadow {
+  //     box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+  //     -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+  //   }
+
+  //   .card-movie-hover-body {
+  //     background-color: rgba(0, 0, 0, 0.5);
+  //     cursor: pointer;
+  //     position: absolute;
+  //     top: 0;
+  //     bottom: 0;
+  //     left: 0;
+  //     right: 0;
+  //     width: 100%;
+  //     text-align: center;
+
+  //     .card-movie-hover-body-label {
+  //       color: white;
+  //     }
+  //   }
+}
