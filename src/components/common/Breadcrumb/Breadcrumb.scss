@@ -1,0 +1,15 @@
+@import 'assets/scss/colors.scss';
+
+.breadcrumb-container {
+  &.breadcrumb-container-small {
+    font-size: 1.5rem;
+    line-height: 1rem;
+  }
+  .breadcrumb-title {
+    color: $color-gray;
+  }
+
+  .breadcrumb-back {
+    cursor: pointer;
+  }
+}

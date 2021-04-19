@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import './ByCategory.scss';
 import CardMovie from 'components/common/CardMovie';
 import useQuery from 'hooks/useQuery';
+import Breadcrumb from 'components/common/Breadcrumb';
 
 const ByCategory = () => {
   const history = useHistory();
@@ -12,14 +13,13 @@ const ByCategory = () => {
   const query = useQuery();
   const category = query.get('category');
 
-  const onViewDetails = id => {
-    history.push(`/details/${id}`);
+  const onBack = () => {
+    history.push(`/`);
   };
 
   return (
     <div className="p-5">
-      <p className="m-0">Movies</p>
-      <h2>Browse All</h2>
+      <Breadcrumb showBackButton onBack={onBack} subtitle={category} />
       {loading ? (
         <p>Loading...</p>
       ) : (

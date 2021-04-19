@@ -5,17 +5,12 @@ import CardMovie from 'components/common/CardMovie';
 import GenreButton from 'components/common/GenreButton';
 import { useHistory } from 'react-router-dom';
 import genres from 'constants/genres';
+import Breadcrumb from 'components/common/Breadcrumb';
 
 const Home = () => {
   const history = useHistory();
   const { data, loading } = useFetchAllMovies();
   const [topMovieData, setTopMovieData] = useState([]);
-  const onBrowseByCategory = category => {
-    history.push(`/list?category=${escape(category)}`);
-  };
-  const onViewDetails = id => {
-    history.push(`/details/${id}`);
-  };
 
   useEffect(() => {
     if (!loading && data && data.length) {
@@ -30,9 +25,7 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="top-five-container pt-4 pb-5 px-5">
-        <h2 className="pb-3">
-          <span className="home-movies-subtitle">Movies:</span> Top 5
-        </h2>
+        <Breadcrumb subtitle="Top 5" />
         {loading || !topMovieData ? (
           <p>Loading...</p>
         ) : (
@@ -40,7 +33,7 @@ const Home = () => {
             {topMovieData.map(movie => (
               <CardMovie
                 showCardBody
-                onViewDetails={() => onViewDetails(movie.id)}
+                onViewDetails={() => history.push(`/details/${movie.id}`)}
                 {...movie}
               />
             ))}
@@ -54,7 +47,7 @@ const Home = () => {
           {Object.values(genres).map(genre => (
             <GenreButton
               genre={genre}
-              onClick={() => onBrowseByCategory(genre)}
+              onClick={() => history.push(`/list?category=${escape(genre)}`)}
             />
           ))}
         </div>
@@ -68,7 +61,7 @@ const Home = () => {
           <div className="d-flex justify-content-between flex-wrap">
             {data.map(movie => (
               <CardMovie
-                onViewDetails={() => onViewDetails(movie.id)}
+                onViewDetails={() => history.push(`/details/${movie.id}`)}
                 {...movie}
               />
             ))}
