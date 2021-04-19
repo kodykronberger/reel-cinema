@@ -26,7 +26,7 @@ const ByCategory = () => {
         <div className="movies-container d-flex justify-content-between flex-wrap">
           {data.map(movie => (
             <CardMovie
-              onViewDetails={() => onViewDetails(movie.id)}
+              onViewDetails={() => history.push(`/details/${movie.id}`)}
               {...movie}
             />
           ))}
