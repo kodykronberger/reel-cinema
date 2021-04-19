@@ -14,6 +14,7 @@ import {
 } from 'reactstrap';
 import RatingLabel from 'components/common/RatingLabel';
 import './Details.scss';
+import DetailsCastItem from './DetailsCastItem';
 
 const Details = () => {
   const { id } = useParams();
@@ -63,20 +64,7 @@ const Details = () => {
           <h2 className="mb-3">Cast</h2>
           <div className="details-cast-container d-flex justify-content-between flex-wrap">
             {data.cast?.map((member, idx) => (
-              <Card key={idx} className="details-cast-member">
-                <CardImg
-                  top
-                  width="100%"
-                  src={member.profilePath}
-                  alt={member.name}
-                />
-                <CardBody>
-                  <CardTitle>{member.name}</CardTitle>
-                  <CardSubtitle tag="p" className="mb-2 text-muted">
-                    {member.character}
-                  </CardSubtitle>
-                </CardBody>
-              </Card>
+              <DetailsCastItem key={idx} {...member} />
             ))}
           </div>
         </div>

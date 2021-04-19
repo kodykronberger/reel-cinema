@@ -37,4 +37,8 @@ $details-cast-member-width: 18%;
   width: $details-cast-member-width;
   min-width: $details-cast-member-width;
   border: none;
+
+  img {
+    background-color: $color-blue;
+  }
 }
