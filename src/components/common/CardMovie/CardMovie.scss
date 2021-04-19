@@ -5,7 +5,13 @@ $card-movie-width: 18%;
   width: $card-movie-width;
   border: none;
 
-  &:hover {
+  .card-movie-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  &.card-movie-shadow,
+  .card-movie-shadow {
     box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
   }

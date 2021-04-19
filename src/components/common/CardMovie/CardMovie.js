@@ -7,7 +7,9 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
-  Button
+  Button,
+  Row,
+  Col
 } from 'reactstrap';
 import RatingLabel from '../RatingLabel';
 
@@ -27,22 +29,34 @@ const CardMovie = ({
       <Card
         className={`card-movie d-inline-block mb-2 ${
           !showCardBody ? 'card-movie-bodyless' : ''
-        }`}
+        } ${isHovered ? 'card-movie-shadow' : ''}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <CardImg top width="100%" src={posterPath} alt={originalTitle} />
+        <CardImg
+          top
+          width="100%"
+          src={posterPath}
+          alt={originalTitle}
+          className={!isHovered ? 'card-movie-shadow' : ''}
+        />
         {showCardBody && (
           <CardBody>
             <CardTitle>
-              {originalTitle}
-              <RatingLabel rating={voteAverage} />
+              <Row>
+                <Col md="8">
+                  <p className="card-movie-title">{originalTitle}</p>
+                </Col>
+                <Col md="4">
+                  <RatingLabel rating={voteAverage} />
+                </Col>
+              </Row>
             </CardTitle>
-            <CardSubtitle tag="h6" className="mb-2 text-muted">
+            <CardSubtitle tag="p" className="mb-2 text-muted">
               {genres.join(', ')}
             </CardSubtitle>
             {isHovered && (
-              <Button className="align-center" onClick={onViewDetails}>
+              <Button className="w-100 align-center" onClick={onViewDetails}>
                 View Details
               </Button>
             )}

@@ -1,2 +1,19 @@
-.movies-container {
+@import 'assets/scss/colors.scss';
+
+.home-container {
+  .home-movies-subtitle {
+    color: $color-gray;
+  }
+
+  .genres-container {
+    background-color: $color-light-gray;
+  }
+
+  h2 {
+    color: $color-black;
+  }
+
+  h5 {
+    color: $color-gray;
+  }
 }

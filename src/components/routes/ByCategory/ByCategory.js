@@ -17,7 +17,7 @@ const ByCategory = () => {
   };
 
   return (
-    <div className="py-5">
+    <div className="p-5">
       <p className="m-0">Movies</p>
       <h2>Browse All</h2>
       {loading ? (

@@ -4,6 +4,7 @@ import Navbar from 'components/layout/Navbar';
 import Home from 'components/routes/Home';
 import ByCategory from 'components/routes/ByCategory';
 import Details from 'components/routes/Details';
+import './App.scss';
 
 /**
  * This function is used to simulate performance benchmarking.
@@ -30,7 +31,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <div className="px-5">
+      <div className="app-container">
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/list" exact component={ByCategory} />
