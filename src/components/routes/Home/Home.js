@@ -8,6 +8,7 @@ import genres from 'constants/genres';
 import Breadcrumb from 'components/common/Breadcrumb';
 import movies from 'constants/movies';
 import SortDropdown from 'components/common/SortDropdown';
+import { SRLWrapper } from 'simple-react-lightbox';
 
 const Home = () => {
   const history = useHistory();
@@ -38,16 +39,18 @@ const Home = () => {
         {loading || !topMovieData ? (
           <p>Loading...</p>
         ) : (
-          <div className="d-flex justify-content-between">
-            {topMovieData.map((movie, idx) => (
-              <CardMovie
-                key={idx}
-                showCardBody
-                onViewDetails={() => history.push(`/details/${movie.id}`)}
-                {...movie}
-              />
-            ))}
-          </div>
+          <SRLWrapper>
+            <div className="d-flex justify-content-between">
+              {topMovieData.map((movie, idx) => (
+                <CardMovie
+                  key={idx}
+                  showCardBody
+                  onViewDetails={() => history.push(`/details/${movie.id}`)}
+                  {...movie}
+                />
+              ))}
+            </div>
+          </SRLWrapper>
         )}
       </div>
       <div className="genres-container p-5">

@@ -7,13 +7,16 @@ import './index.scss';
 import App from './App';
 import client from './apolloClient';
 import reportWebVitals from './reportWebVitals';
+import SimpleReactLightbox from 'simple-react-lightbox';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <>
         <ApolloProvider client={client}>
-          <App />
+          <SimpleReactLightbox>
+            <App />
+          </SimpleReactLightbox>
         </ApolloProvider>
       </>
     </Router>
