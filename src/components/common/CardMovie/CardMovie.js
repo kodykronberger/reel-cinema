@@ -15,6 +15,7 @@ import RatingLabel from '../RatingLabel';
 
 const CardMovie = ({
   id,
+  order,
   originalTitle,
   genres,
   voteAverage,
@@ -32,6 +33,7 @@ const CardMovie = ({
         } ${isHovered ? 'card-movie-shadow' : ''}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        style={{ order: order }}
       >
         <CardImg
           top

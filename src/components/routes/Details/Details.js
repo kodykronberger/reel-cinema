@@ -60,10 +60,10 @@ const Details = () => {
               </div>
             </Col>
           </Row>
-          <h2>Cast</h2>
+          <h2 className="mb-3">Cast</h2>
           <div className="details-cast-container d-flex justify-content-between flex-wrap">
-            {data.cast?.map(member => (
-              <Card className="details-cast-member">
+            {data.cast?.map((member, idx) => (
+              <Card key={idx} className="details-cast-member">
                 <CardImg
                   top
                   width="100%"

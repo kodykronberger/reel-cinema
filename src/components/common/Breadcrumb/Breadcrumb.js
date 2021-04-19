@@ -8,7 +8,7 @@ const Breadcrumb = ({
 }) => {
   return (
     <h2
-      className={`breadcrumb-container ${
+      className={`breadcrumb-container d-inline-block ${
         showBackButton ? 'breadcrumb-container-small' : ''
       } pb-3`}
     >

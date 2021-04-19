@@ -6,6 +6,7 @@ import GenreButton from 'components/common/GenreButton';
 import { useHistory } from 'react-router-dom';
 import genres from 'constants/genres';
 import Breadcrumb from 'components/common/Breadcrumb';
+import movies from 'constants/movies';
 
 const Home = () => {
   const history = useHistory();
@@ -15,9 +16,13 @@ const Home = () => {
   useEffect(() => {
     if (!loading && data && data.length) {
       //? The top 5 movies by rating was determined using JavaScript's built in .sort() function. If needed,
-      //? we should implement a fast sorting function, such as "insertion sort  ""
+      //? we should implement a fast sorting function, such as "insertion sort"
+      //? Also, a movie needs to have *at least* 100 votes in order to be considered "top"
       setTopMovieData(
-        data.sort((a, b) => b.voteAverage - a.voteAverage).slice(0, 5)
+        data
+          .filter(a => a.voteCount > movies.minimumTopMovieVoteCount)
+          .sort((a, b) => b.voteAverage - a.voteAverage)
+          .slice(0, 5)
       );
     }
   }, [data, loading]);
@@ -30,8 +35,9 @@ const Home = () => {
           <p>Loading...</p>
         ) : (
           <div className="d-flex justify-content-between">
-            {topMovieData.map(movie => (
+            {topMovieData.map((movie, idx) => (
               <CardMovie
+                key={idx}
                 showCardBody
                 onViewDetails={() => history.push(`/details/${movie.id}`)}
                 {...movie}
@@ -44,8 +50,9 @@ const Home = () => {
         <h5 className="mb-0">Browse</h5>
         <h2 className="mb-3">by Genre</h2>
         <div className="d-flex justify-content-between">
-          {Object.values(genres).map(genre => (
+          {Object.values(genres).map((genre, idx) => (
             <GenreButton
+              key={idx}
               genre={genre}
               onClick={() => history.push(`/list?category=${escape(genre)}`)}
             />
@@ -59,8 +66,9 @@ const Home = () => {
           <p>Loading...</p>
         ) : (
           <div className="d-flex justify-content-between flex-wrap">
-            {data.map(movie => (
+            {data.map((movie, idx) => (
               <CardMovie
+                key={idx}
                 onViewDetails={() => history.push(`/details/${movie.id}`)}
                 {...movie}
               />

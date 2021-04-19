@@ -1,0 +1,23 @@
+@import 'assets/scss/colors';
+
+.sort-by-label {
+  font-size: 0.9rem;
+  color: $color-gray;
+  font-weight: 300;
+}
+.sort-dropdown {
+  .dropdown-toggle {
+    background-color: white;
+    border-color: $color-gray;
+    color: $color-black;
+    width: 10rem;
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: 300;
+
+    &::after {
+      float: right;
+      margin-top: 8px; /* TODO: better style implementation */
+    }
+  }
+}
